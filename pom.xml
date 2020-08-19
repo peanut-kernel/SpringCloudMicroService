@@ -8,7 +8,7 @@
 		<version>1.5.13.RELEASE</version>
 	</parent>
 
-	<groupId>com.atguigu.springcloud</groupId>
+	<groupId>com.cgfbg.springcloud</groupId>
 	<artifactId>microservicecloud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -98,7 +98,8 @@
 		<module>microservicecloud-provider-dept-8002</module>
 		<module>microservicecloud-provider-dept-8003</module>
 		<module>microservicecloud-consumer-dept-feign</module>
-	</modules>
+        <module>microservicecloud-consumer-resttemplate</module>
+    </modules>
 
 </project>
 

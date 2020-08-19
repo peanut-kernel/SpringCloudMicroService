@@ -8,9 +8,9 @@ import com.cgfbg.springcloud.entities.Dept;
 
 @Mapper
 public interface DeptDao {
-	public boolean addDept(Dept dept);
+	boolean addDept(Dept dept);
 
-	public Dept findById(Long id);
+	Dept findById(Long id);
 
-	public List<Dept> findAll();
+	List<Dept> findAll();
 }

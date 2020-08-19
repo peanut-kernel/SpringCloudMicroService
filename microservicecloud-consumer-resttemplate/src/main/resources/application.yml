@@ -1,0 +1,7 @@
+server:
+  port: 8888
+
+testservice:
+  ribbon:
+    listOfServers: 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003
+
