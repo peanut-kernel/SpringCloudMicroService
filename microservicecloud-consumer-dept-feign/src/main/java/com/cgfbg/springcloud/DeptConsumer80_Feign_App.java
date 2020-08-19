@@ -10,8 +10,9 @@ import com.cgfbg.myrule.MySelfRule;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients(basePackages = { "com.atguigu.springcloud" })
-@RibbonClient(name = "MICROSERVICECLOUD-DEPT", configuration = MySelfRule.class)
+@EnableFeignClients(basePackages = { "com.cgfbg.springcloud" })
+// @RibbonClient 的 name 必须是服务名才能生效
+//@RibbonClient(name = "MICROSERVICECLOUD-DEPT", configuration = MySelfRule.class)
 public class DeptConsumer80_Feign_App {
 	public static void main(String[] args) {
 		SpringApplication.run(DeptConsumer80_Feign_App.class, args);

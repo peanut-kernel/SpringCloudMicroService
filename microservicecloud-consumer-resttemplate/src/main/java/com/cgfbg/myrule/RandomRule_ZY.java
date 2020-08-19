@@ -1,11 +1,11 @@
 package com.cgfbg.myrule;
 
-import java.util.List;
-
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;
 import com.netflix.loadbalancer.ILoadBalancer;
 import com.netflix.loadbalancer.Server;
+
+import java.util.List;
 
 public class RandomRule_ZY extends AbstractLoadBalancerRule {
 
@@ -19,7 +19,6 @@ public class RandomRule_ZY extends AbstractLoadBalancerRule {
 	private int currentIndex = 0; // 当前提供服务的机器号
 
 	public Server choose(ILoadBalancer lb, Object key) {
-		System.out.println("key: " + key);
 		if (lb == null) {
 			return null;
 		}

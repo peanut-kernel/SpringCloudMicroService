@@ -1,7 +1,11 @@
 server:
   port: 8888
 
-testservice:
+testservice1:
   ribbon:
-    listOfServers: 127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003
-
+    listOfServers: 127.0.0.1:8001,127.0.0.1:8002
+testservice2:
+  ribbon:
+    listOfServers: 127.0.0.1:8002,127.0.0.1:8003
+    # 自定义负载均衡规则
+    # NFLoadBalancerRuleClassName: com.cgfbg.myrule.RandomRule_ZY
