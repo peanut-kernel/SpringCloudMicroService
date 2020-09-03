@@ -1,6 +1,7 @@
 package com.cgfbg.springcloud;
 
 import com.cgfbg.myrule.MySelfRule;
+import com.cgfbg.myrule.MySelfRule2;
 import com.cgfbg.springcloud.cfgbeans.ConfigBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +13,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClients;
 //@RibbonClient(name="testservice1", configuration = MySelfRule.class)
 @RibbonClients( value = {
 		@RibbonClient(name = "testservice1", configuration = MySelfRule.class),
-		@RibbonClient(name = "testservice2", configuration = MySelfRule.class)
+		@RibbonClient(name = "testservice2", configuration = MySelfRule2.class)
 }
 )
 public class DeptConsumerRestTemplate8888_App {
