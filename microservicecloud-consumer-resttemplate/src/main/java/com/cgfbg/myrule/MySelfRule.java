@@ -1,3 +1,4 @@
+
 package com.cgfbg.myrule;
 
 import com.netflix.loadbalancer.IRule;
@@ -14,3 +15,4 @@ public class MySelfRule {
 		return new RandomRule_ZY();// 我自定义为每台机器5次
 	}
 }
+

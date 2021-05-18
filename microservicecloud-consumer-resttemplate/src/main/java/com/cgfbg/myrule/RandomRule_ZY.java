@@ -1,3 +1,4 @@
+
 package com.cgfbg.myrule;
 
 import com.netflix.client.config.IClientConfig;
@@ -33,10 +34,12 @@ public class RandomRule_ZY extends AbstractLoadBalancerRule {
 
 			int serverCount = allList.size();
 			if (serverCount == 0) {
-				/*
+
+/*
 				 * No servers. End regardless of pass, because subsequent passes only get more
 				 * restrictive.
 				 */
+
 				return null;
 			}
 
@@ -57,10 +60,12 @@ public class RandomRule_ZY extends AbstractLoadBalancerRule {
 			}
 
 			if (server == null) {
-				/*
+
+/*
 				 * The only time this should happen is if the server list were somehow trimmed.
 				 * This is a transient condition. Retry after yielding.
 				 */
+
 				Thread.yield();
 				continue;
 			}

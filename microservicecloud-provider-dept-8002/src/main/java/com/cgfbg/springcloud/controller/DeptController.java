@@ -3,13 +3,10 @@ package com.cgfbg.springcloud.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.cgfbg.springcloud.entities.Dept;
 import com.cgfbg.springcloud.service.DeptService;
@@ -20,6 +17,9 @@ public class DeptController {
 	private DeptService service;
 	@Autowired
 	private DiscoveryClient client;
+
+	@Value("${server.port}")
+	private String serverPort;
 
 	@RequestMapping(value = "/dept/add", method = RequestMethod.POST)
 	public boolean add(@RequestBody Dept dept) {
@@ -51,4 +51,9 @@ public class DeptController {
 		return this.client;
 	}
 
+
+	@GetMapping(value = "/payment/lb")
+	public String getPaymentLB(){
+		return serverPort;
+	}
 }

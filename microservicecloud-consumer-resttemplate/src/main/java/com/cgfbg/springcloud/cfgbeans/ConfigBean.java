@@ -1,12 +1,8 @@
 package com.cgfbg.springcloud.cfgbeans;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RoundRobinRule;
-import com.netflix.loadbalancer.Server;
+import com.netflix.loadbalancer.RandomRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient;
-import org.springframework.cloud.netflix.ribbon.SpringClientFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -23,18 +19,18 @@ public class ConfigBean {
 	public IRule myRule() {
 		// return new RoundRobinRule();
 		// return new RandomRule();//达到的目的，用我们重新选择的随机算法替代默认的轮询。
-		return new RoundRobinRule();
+		return new RandomRule();
 	}
 
 	//@Bean
-	public LoadBalancerClient loadBalancerClient(SpringClientFactory factory) {
+/*	public LoadBalancerClient loadBalancerClient(SpringClientFactory factory) {
 		return new RibbonLoadBalancerClient(factory) {
 			@Override
 			protected Server getServer(String serviceId) {
 				return new Server("127.0.0.1", 8001);
 			}
 		};
-	}
+	}*/
 }
 
 // @Bean

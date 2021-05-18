@@ -16,6 +16,12 @@
             <groupId>com.atguigu.springcloud</groupId>
             <artifactId>microservicecloud-api</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-feign</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- Ribbon相关 -->
         <dependency>
@@ -34,6 +40,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-commons</artifactId>
         </dependency>
     </dependencies>
 </project>
